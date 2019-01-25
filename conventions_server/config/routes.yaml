@@ -9,3 +9,35 @@ uczestnik:
 bilet:
    path: /bilet
    controller: App\WebController\BiletController::index
+
+czlonekZespolu:
+   path: /czlonek/zespolu
+   controller: App\WebController\CzlonekZespoluController::index
+      
+konwent:
+   path: /konwent
+   controller: App\WebController\KonwentController::index
+
+konkurs:
+   path: /konkurs
+   controller: App\WebController\KonkursController::index
+
+gra:
+   path: /gra
+   controller: App\WebController\GraController::index
+
+stoisko:
+   path: /stoisko
+   controller: App\WebController\StoiskoController::index
+
+zespol:
+   path: /zespol
+   controller: App\WebController\ZespolController::index
+
+produkt:
+   path: /produkt
+   controller: App\WebController\ProduktController::index
+
+plan:
+   path: /plan
+   controller: App\WebController\PlanController::index
