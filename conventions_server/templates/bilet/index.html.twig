@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bilet index{% endblock %}
+
+{% block body %}
+    <h1>Bilet index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nazwa</th>
+                <th>Cena</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bilet in bilets %}
+            <tr>
+                <td>{{ bilet.id }}</td>
+                <td>{{ bilet.nazwa }}</td>
+                <td>{{ bilet.cena }}</td>
+                <td>
+                    <a href="{{ path('bilet_show', {'id': bilet.id}) }}">show</a>
+                    <a href="{{ path('bilet_edit', {'id': bilet.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('bilet_new') }}">Create new</a>
+{% endblock %}

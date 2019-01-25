@@ -28,6 +28,7 @@ class Bilet implements \JsonSerializable
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Uczestnik", mappedBy="bilet", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
      */
     private $uczestnik;
 

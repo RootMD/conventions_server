@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\WebController;
 
 use App\Entity\Uczestnik;
 use App\Form\UczestnikType;

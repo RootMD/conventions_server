@@ -45,6 +45,11 @@ class Konkurs implements \JsonSerializable
      */
     private $uczestnicy;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nazwa;
+
     public function __construct()
     {
         $this->uczestnicy = new ArrayCollection();
@@ -143,5 +148,17 @@ class Konkurs implements \JsonSerializable
             'data'         => $this->data,
             'uczestnicy'         => $this->uczestnicy,
         ];
+    }
+
+    public function getNazwa(): ?string
+    {
+        return $this->nazwa;
+    }
+
+    public function setNazwa(string $nazwa): self
+    {
+        $this->nazwa = $nazwa;
+
+        return $this;
     }
 }

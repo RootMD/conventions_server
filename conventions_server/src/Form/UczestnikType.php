@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Bilet;
 use App\Entity\Konkurs;
 use App\Entity\Uczestnik;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,7 +21,7 @@ class UczestnikType extends AbstractType
             ->add('nick')
             ->add('konkurs', EntityType::class, [
                 'class' => Konkurs::class,
-                'choice_label' => 'nagroda'
+                'choice_label' => 'nazwa'
             ])
             ->add('bilet', EntityType::class, [
                 'class' => Bilet::class,
