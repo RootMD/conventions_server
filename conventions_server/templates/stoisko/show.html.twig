@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stoisko{% endblock %}
+
+{% block body %}
+    <h1>Stoisko</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ stoisko.id }}</td>
+            </tr>
+            <tr>
+                <th>Lokalizacja</th>
+                <td>{{ stoisko.lokalizacja }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('stoisko_index') }}">back to list</a>
+
+    <a href="{{ path('stoisko_edit', {'id': stoisko.id}) }}">edit</a>
+
+    {{ include('stoisko/_delete_form.html.twig') }}
+{% endblock %}

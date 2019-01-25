@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CzlonekZespolu index{% endblock %}
+
+{% block body %}
+    <h1>CzlonekZespolu index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Stanowisko</th>
+                <th>Imie</th>
+                <th>Nazwisko</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for czlonek_zespolu in czlonek_zespolus %}
+            <tr>
+                <td>{{ czlonek_zespolu.id }}</td>
+                <td>{{ czlonek_zespolu.stanowisko }}</td>
+                <td>{{ czlonek_zespolu.imie }}</td>
+                <td>{{ czlonek_zespolu.nazwisko }}</td>
+                <td>
+                    <a href="{{ path('czlonek_zespolu_show', {'id': czlonek_zespolu.id}) }}">show</a>
+                    <a href="{{ path('czlonek_zespolu_edit', {'id': czlonek_zespolu.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Konwent{% endblock %}
+
+{% block body %}
+    <h1>Edit Konwent</h1>
+
+    {{ include('konwent/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('konwent_index') }}">back to list</a>
+
+    {{ include('konwent/_delete_form.html.twig') }}
+{% endblock %}

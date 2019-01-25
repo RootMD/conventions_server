@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CzlonekZespolu{% endblock %}
+
+{% block body %}
+    <h1>CzlonekZespolu</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ czlonek_zespolu.id }}</td>
+            </tr>
+            <tr>
+                <th>Stanowisko</th>
+                <td>{{ czlonek_zespolu.stanowisko }}</td>
+            </tr>
+            <tr>
+                <th>Imie</th>
+                <td>{{ czlonek_zespolu.imie }}</td>
+            </tr>
+            <tr>
+                <th>Nazwisko</th>
+                <td>{{ czlonek_zespolu.nazwisko }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('czlonek_zespolu_index') }}">back to list</a>
+
+    <a href="{{ path('czlonek_zespolu_edit', {'id': czlonek_zespolu.id}) }}">edit</a>
+
+    {{ include('czlonek_zespolu/_delete_form.html.twig') }}
+{% endblock %}

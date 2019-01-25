@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Konwent{% endblock %}
+
+{% block body %}
+    <h1>Create new Konwent</h1>
+
+    {{ include('konwent/_form.html.twig') }}
+
+    <a href="{{ path('konwent_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Konkurs index{% endblock %}
+
+{% block body %}
+    <h1>Konkurs index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nagroda</th>
+                <th>Data</th>
+                <th>Nazwa</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for konkur in konkurs %}
+            <tr>
+                <td>{{ konkur.id }}</td>
+                <td>{{ konkur.nagroda }}</td>
+                <td>{{ konkur.data ? konkur.data|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ konkur.nazwa }}</td>
+                <td>
+                    <a href="{{ path('konkurs_show', {'id': konkur.id}) }}">show</a>
+                    <a href="{{ path('konkurs_edit', {'id': konkur.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('konkurs_new') }}">Create new</a>
+{% endblock %}

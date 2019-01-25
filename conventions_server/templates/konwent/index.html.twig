@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Konwent index{% endblock %}
+
+{% block body %}
+    <h1>Konwent index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nazwa</th>
+                <th>Miasto</th>
+                <th>Lokalizacja</th>
+                <th>Data</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for konwent in konwents %}
+            <tr>
+                <td>{{ konwent.id }}</td>
+                <td>{{ konwent.nazwa }}</td>
+                <td>{{ konwent.miasto }}</td>
+                <td>{{ konwent.lokalizacja }}</td>
+                <td>{{ konwent.data ? konwent.data|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('konwent_show', {'id': konwent.id}) }}">show</a>
+                    <a href="{{ path('konwent_edit', {'id': konwent.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('konwent_new') }}">Create new</a>
+{% endblock %}

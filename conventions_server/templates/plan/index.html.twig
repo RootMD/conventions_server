@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plan index{% endblock %}
+
+{% block body %}
+    <h1>Plan index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Czas_rozpoczecia</th>
+                <th>Czas_zakonczenia</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for plan in plans %}
+            <tr>
+                <td>{{ plan.id }}</td>
+                <td>{{ plan.czasRozpoczecia ? plan.czasRozpoczecia|date('H:i:s') : '' }}</td>
+                <td>{{ plan.czasZakonczenia ? plan.czasZakonczenia|date('H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('plan_show', {'id': plan.id}) }}">show</a>
+                    <a href="{{ path('plan_edit', {'id': plan.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

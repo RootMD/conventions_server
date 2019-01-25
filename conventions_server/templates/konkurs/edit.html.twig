@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Konkurs{% endblock %}
+
+{% block body %}
+    <h1>Edit Konkurs</h1>
+
+    {{ include('konkurs/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('konkurs_index') }}">back to list</a>
+
+    {{ include('konkurs/_delete_form.html.twig') }}
+{% endblock %}

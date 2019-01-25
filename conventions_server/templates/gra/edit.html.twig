@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Gra{% endblock %}
+
+{% block body %}
+    <h1>Edit Gra</h1>
+
+    {{ include('gra/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('gra_index') }}">back to list</a>
+
+    {{ include('gra/_delete_form.html.twig') }}
+{% endblock %}

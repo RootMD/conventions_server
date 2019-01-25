@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stoisko index{% endblock %}
+
+{% block body %}
+    <h1>Stoisko index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Lokalizacja</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stoisko in stoiskos %}
+            <tr>
+                <td>{{ stoisko.id }}</td>
+                <td>{{ stoisko.lokalizacja }}</td>
+                <td>
+                    <a href="{{ path('stoisko_show', {'id': stoisko.id}) }}">show</a>
+                    <a href="{{ path('stoisko_edit', {'id': stoisko.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

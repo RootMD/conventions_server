@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Gra{% endblock %}
+
+{% block body %}
+    <h1>Create new Gra</h1>
+
+    {{ include('gra/_form.html.twig') }}
+
+    <a href="{{ path('gra_index') }}">back to list</a>
+{% endblock %}
