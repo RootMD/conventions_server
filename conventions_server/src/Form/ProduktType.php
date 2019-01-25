@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Produkt;
+use App\Entity\Stoisko;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,7 +17,10 @@ class ProduktType extends AbstractType
             ->add('nazwa')
             ->add('cena')
             ->add('ilosc')
-            ->add('stoisko')
+            ->add('stoisko', EntityType::class, [
+                'class' => Stoisko::class,
+                'choice_label' => 'lokalizacja'
+            ])
         ;
     }
 

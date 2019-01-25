@@ -2,7 +2,10 @@
 
 namespace App\Form;
 
+use App\Entity\Plan;
+use App\Entity\Stoisko;
 use App\Entity\Zespol;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,8 +16,14 @@ class ZespolType extends AbstractType
     {
         $builder
             ->add('nazwa')
-            ->add('plan')
-            ->add('stoisko')
+            ->add('plan', EntityType::class, [
+                'class' => Plan::class,
+                'choice_label' => 'czas_rozpoczecia'
+            ])
+            ->add('stoisko', EntityType::class, [
+                'class' => Stoisko::class,
+                'choice_label' => 'lokalizacja'
+            ])
         ;
     }
 

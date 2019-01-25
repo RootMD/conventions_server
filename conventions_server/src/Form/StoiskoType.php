@@ -13,7 +13,6 @@ class StoiskoType extends AbstractType
     {
         $builder
             ->add('lokalizacja')
-            ->add('zespol')
         ;
     }
 
