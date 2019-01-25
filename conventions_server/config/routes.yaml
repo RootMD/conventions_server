@@ -1,3 +1,11 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+   path: /
+   controller: App\WebController\IndexController::homepage
+
+uczestnik:
+   path: /uczestnik
+   controller: App\WebController\UczestnikController::index
+
+bilet:
+   path: /bilet
+   controller: App\WebController\BiletController::index
