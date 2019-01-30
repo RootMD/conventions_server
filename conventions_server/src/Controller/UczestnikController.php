@@ -44,6 +44,7 @@ class UczestnikController extends AbstractFOSRestController
         $uczestnik->setNazwisko($request->request->get('nazwisko'));
         $uczestnik->setImie($request->request->get('imie'));
         $uczestnik->setNick($request->request->get('nick'));
+        $uczestnik->setEmail($request->request->get('email'));
         $repo = $this->getDoctrine()->getRepository(Konkurs::class)->findOneBy(['id'=>$request->request->get('konkurs')]);
         $uczestnik->setKonkurs($repo);
         $entityManager = $this->getDoctrine()->getManager();
