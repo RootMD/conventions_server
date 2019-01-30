@@ -31,4 +31,20 @@ class ZespolController extends AbstractFOSRestController
         return View::create($zespol, Response::HTTP_OK);
 
     }
+
+    /**
+     * @Rest\Get("/zespol/one/{id}")
+     * @param $id
+     * @return View
+     */
+    public function getOneZespolAction($id): View
+    {
+        $repository = $this->getDoctrine()->getRepository(Zespol::class);
+        $zespol = $repository->findOneBy(
+            ['id' => $id ]
+        );
+
+        return View::create($zespol, Response::HTTP_OK);
+
+    }
 }

@@ -17,16 +17,13 @@ use Symfony\Component\HttpFoundation\Response;
 class KonkursController extends AbstractFOSRestController
 {
     /**
-     * @Rest\Get("/konkurs/{id}")
-     * @param $id
+     * @Rest\Get("/konkurs")
      * @return View
      */
-    public function getKonkursAction($id): View
+    public function getKonkursAction(): View
     {
         $repository = $this->getDoctrine()->getRepository(Konkurs::class);
-        $konkurs = $repository->findBy(
-            ['konwent' => $id]
-        );
+        $konkurs = $repository->findAll();
 
         return View::create($konkurs, Response::HTTP_OK);
 

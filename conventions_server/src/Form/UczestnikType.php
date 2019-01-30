@@ -19,6 +19,7 @@ class UczestnikType extends AbstractType
             ->add('imie')
             ->add('nazwisko')
             ->add('nick')
+            ->add('email')
             ->add('konkurs', EntityType::class, [
                 'class' => Konkurs::class,
                 'choice_label' => 'nazwa'

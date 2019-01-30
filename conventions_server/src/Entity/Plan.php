@@ -98,6 +98,7 @@ class Plan implements \JsonSerializable
     public function jsonSerialize() : array
     {
         return [
+            'id'        =>$this->id,
             'zespol'           => $this->zespol,
             'czas_rozpoczecia'        => $this->czas_rozpoczecia,
             'czas_zakonczenia'         => $this->czas_zakonczenia,

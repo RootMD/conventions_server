@@ -177,7 +177,6 @@ class Konwent implements \JsonSerializable
             'miasto'       => $this->miasto,
             'lokalizacja'  => $this->lokalizacja,
             'data'         => $this->data,
-            'konkursy'     => $this->konkursy,
             'plan'         => $this->plans,
         ];
     }

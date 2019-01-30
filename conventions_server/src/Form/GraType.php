@@ -15,6 +15,7 @@ class GraType extends AbstractType
     {
         $builder
             ->add('nazwa')
+            ->add('image')
         ;
     }
 

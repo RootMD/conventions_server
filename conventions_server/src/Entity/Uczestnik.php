@@ -24,7 +24,7 @@ class Uczestnik implements \JsonSerializable
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Bilet", inversedBy="uczestnik", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $bilet;
 
@@ -42,6 +42,11 @@ class Uczestnik implements \JsonSerializable
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $nick;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $email;
 
     public function getId(): ?int
     {
@@ -115,7 +120,18 @@ class Uczestnik implements \JsonSerializable
             'imie'        => $this->imie,
             'nazwisko'         => $this->nazwisko,
             'nick'         => $this->nick,
-            'bilet'         => $this->bilet,
         ];
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(?string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
     }
 }
